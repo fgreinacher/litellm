@@ -1,18 +1,21 @@
-
 # Clarifai
 Anthropic, OpenAI, Mistral, Llama and Gemini LLMs are Supported on Clarifai. 
 
+:::warning 
+
+Streaming is not yet supported on using clarifai and litellm. Tracking support here: https://github.com/BerriAI/litellm/issues/4162
+
+:::
+
 ## Pre-Requisites
-
-`pip install clarifai`
-
 `pip install litellm`
 
 ## Required Environment Variables
 To obtain your Clarifai Personal access token follow this [link](https://docs.clarifai.com/clarifai-basics/authentication/personal-access-tokens/). Optionally the PAT can also be passed in `completion` function.
 
 ```python
-os.environ["CALRIFAI_API_KEY"] = "YOUR_CLARIFAI_PAT"  # CLARIFAI_PAT
+os.environ["CLARIFAI_API_KEY"] = "YOUR_CLARIFAI_PAT"  # CLARIFAI_PAT
+
 ```
 
 ## Usage
@@ -56,7 +59,7 @@ response = completion(
 ```
 
 ## Clarifai models
-liteLLM supports non-streaming requests to all models on [Clarifai community](https://clarifai.com/explore/models?filterData=%5B%7B%22field%22%3A%22use_cases%22%2C%22value%22%3A%5B%22llm%22%5D%7D%5D&page=1&perPage=24)
+liteLLM supports all models on [Clarifai community](https://clarifai.com/explore/models?filterData=%5B%7B%22field%22%3A%22use_cases%22%2C%22value%22%3A%5B%22llm%22%5D%7D%5D&page=1&perPage=24)
 
 Example  Usage - Note: liteLLM supports all models deployed on Clarifai
 
@@ -69,7 +72,7 @@ Example  Usage - Note: liteLLM supports all models deployed on Clarifai
 | clarifai/meta.Llama-2.codeLlama-70b-Python   | `completion('clarifai/meta.Llama-2.codeLlama-70b-Python', messages)`| 
 | clarifai/meta.Llama-2.codeLlama-70b-Instruct | `completion('clarifai/meta.Llama-2.codeLlama-70b-Instruct', messages)` |   
 
-## Mistal LLMs
+## Mistral LLMs
 | Model Name                                  | Function Call                                                         |
 |---------------------------------------------|------------------------------------------------------------------------|
 | clarifai/mistralai.completion.mixtral-8x22B            | `completion('clarifai/mistralai.completion.mixtral-8x22B', messages)`               |
