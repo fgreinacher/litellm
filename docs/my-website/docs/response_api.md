@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# /responses
+# /responses [Beta]
 
 LiteLLM provides a BETA endpoint in the spec of [OpenAI's `/responses` API](https://platform.openai.com/docs/api-reference/responses)
 
@@ -60,7 +60,7 @@ First, add this to your litellm proxy config.yaml:
 model_list:
   - model_name: gpt-4o
     litellm_params:
-      model: openai/gpt-4
+      model: openai/gpt-4o
       api_key: os.environ/OPENAI_API_KEY
 ```
 
